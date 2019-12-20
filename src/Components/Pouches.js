@@ -3,10 +3,9 @@ import React from 'react';
 function Pouches(){
         return (
             <li>
-                <h2>Item Name</h2>
-                <h3>Description</h3>
-                <p>Box Number-clickable link</p>
-                <p>Quantity</p>
+                <h2>Green Box</h2>
+                <h2>Blue Box</h2>
+                <h2>Uhaul Box 1</h2>
             </li>
         )
 }
