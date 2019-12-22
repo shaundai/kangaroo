@@ -1,12 +1,15 @@
 import React from 'react';
 
-function Item(){
+function Item(props) {
+    const { name, desc, quantity, box, location, owner } = props.details; //destructuring like a bawse
         return (
             <li>
-                <h2>Scissors</h2>
-                <h3>The scissors that I always use for hair cutting</h3>
-                <p>Box Number 2-clickable link</p>
-                <p>Quantity: 1</p>
+                <h2>{name}</h2>
+                <h3>Description: {desc}</h3>
+                <p>Box Number: clickable link {box}</p>
+                <p>Quantity: {quantity}</p>
+                <p>Location: {location}</p>
+                <p>Owner: {owner}</p>
             </li>
         )
 }
