@@ -15,9 +15,10 @@ function updateItem (key, updatedItem) {
   //take copy of the current state
   const items = { ...itemList };
   //update the state to that of the updatedItem we took in
-  itemList[key] = updatedItem
+  items[key] = updatedItem;
   //set the state with the updatedItem'
-  setItemList(items)
+  setItemList(items);
+  console.log(items)
 }
 
 
