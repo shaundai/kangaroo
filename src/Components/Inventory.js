@@ -6,7 +6,7 @@ function Inventory(props){
         return (
             <React.Fragment>
                 <AddItemForm addItem={props.addItem} />
-                {Object.keys(props.itemList).map(key => <EditItemForm key={key} index={key} item={props.itemList[key]} updateItem={props.updateItem} />)}
+                {Object.keys(props.itemList).map(key => <EditItemForm key={key} index={key} item={props.itemList[key]} updateItem={props.updateItem} deleteItem={props.deleteItem} />)}
             </React.Fragment>
         )
 }

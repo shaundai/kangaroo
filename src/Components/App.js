@@ -20,14 +20,20 @@ function updateItem (key, updatedItem) {
   setItemList(items);
 }
 
+function deleteItem (key) {
+  const items = { ...itemList };
+  items[key] = null;
+  setItemList(items);
+}
+
 function search (term) {
-  console.log(term)
+  console.log(`this needs actual functionality - see the app component and fix asap`)
 }
 
   return (
     <div className="App">
-        <Inventory addItem={addItem} itemList={itemList} updateItem={updateItem} />
-        <FindItem itemList={itemList} onSearch={search} />
+        <Inventory addItem={addItem} itemList={itemList} updateItem={updateItem} deleteItem={deleteItem} />
+        <FindItem itemList={itemList} onSearch={search} deleteItem={deleteItem} />
     </div>
   );
 }
