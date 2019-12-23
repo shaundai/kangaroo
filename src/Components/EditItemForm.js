@@ -19,6 +19,7 @@ class EditItemForm extends React.Component {
             <input name="box"  type="text" onChange={this.handleChange} value={this.props.item.box} required></input>
             <input name="location" type="text" onChange={this.handleChange} value={this.props.item.location} ></input>
             <input name="quantity"  type="text" onChange={this.handleChange} value={this.props.item.quantity} ></input>
+            <button>Delete Item</button>
         </div>
         )
     }
