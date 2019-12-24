@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 function Searchbar(props){
     const [term, setTerm] = useState('');
 
-    function search() {
+    const search = () => {
         const newTerm = {term}
         props.onSearch(newTerm)
         }
 
-    function handleTermChange(e){
+    const handleTermChange = (e) => {
         setTerm(e.currentTarget.value)
     }
 

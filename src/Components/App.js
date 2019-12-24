@@ -5,6 +5,8 @@ import FindItem from './FindItem';
 
 function App() {
   const [itemList, setItemList] = useState([{ name: "scissors", desc: "the scissors", box: 3, location: "here", owner: "sally", quantity: 4 },  {name: "brush", desc: "the brush", box: 3, location: "here", owner: "sally", quantity: 1 }])
+  const [searchResults, setSearchResults] = useState([]);
+
   function addItem(item){
     const newItemList = {...itemList};
     newItemList[`item${Date.now()}`] = item
@@ -26,8 +28,14 @@ const deleteItem = (key) => {
 }
 
 const search = (term) => {
-  console.log(`this needs actual functionality - see the app component and fix asap`)
+  //takes in the names or descriptions of any item
+  //filters through to see if any of them contain words in the search term
+  //returns terms with only terms searched for
+  let results = itemList.filter(item => item.desc.includes(term))
+  setSearchResults(results);
+  console.log(term)
 }
+
 
   return (
     <div className="App">
