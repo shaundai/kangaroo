@@ -7,7 +7,7 @@ function FindItem(props){
         <React.Fragment>
             <Searchbar onSearch={props.onSearch} />
             <ul>
-            {Object.keys(props.itemList).map(key => <Item key={key} details={props.itemList[key]} />)}
+            {Object.keys(props.itemList).map(key => <Item key={key} index={key} details={props.itemList[key]} deleteItem={props.deleteItem} />)}
             </ul>
         </React.Fragment>
     )

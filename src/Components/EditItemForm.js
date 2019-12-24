@@ -18,7 +18,7 @@ import React from 'react';
                 <input name="box"  type="text" onChange={handleChange} value={props.item.box} required></input>
                 <input name="location" type="text" onChange={handleChange} value={props.item.location} ></input>
                 <input name="quantity"  type="text" onChange={handleChange} value={props.item.quantity} ></input>
-                <button onClick={()=>props.deleteItem(props.index)}>Delete Item</button>
+            <button onClick={()=>{if (window.confirm('Are you sure you want to delete me?')) props.deleteItem(props.index)}}>Delete Item</button>
             </div>
         )
 }

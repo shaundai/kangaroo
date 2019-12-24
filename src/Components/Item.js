@@ -10,6 +10,7 @@ function Item(props) {
                 <p>Quantity: {quantity}</p>
                 <p>Location: {location}</p>
                 <p>Owner: {owner}</p>
+                <button onClick={()=>{if (window.confirm('Are you sure you want to delete me?'))props.deleteItem(props.index)}}>Delete Item</button>
             </li>
         )
 }
