@@ -11,7 +11,7 @@ function App() {
     setItemList(newItemList);
 }
 
-function updateItem (key, updatedItem) {
+const updateItem = (key, updatedItem) => {
   //take copy of the current state
   const items = { ...itemList };
   //update the state to that of the updatedItem we took in
@@ -20,13 +20,12 @@ function updateItem (key, updatedItem) {
   setItemList(items);
 }
 
-function deleteItem (key) {
-  const items = { ...itemList };
-  items[key] = null;
-  setItemList(items);
+const deleteItem = (key) => {
+  setItemList(itemList.filter(item => itemList[key] !== item));
+  console.log(key)
 }
 
-function search (term) {
+const search = (term) => {
   console.log(`this needs actual functionality - see the app component and fix asap`)
 }
 

@@ -16,7 +16,7 @@ class AddItemForm extends React.Component{
             owner: this.ownerRef.current.value,
             box: this.boxRef.current.value,
             location: this.locationRef.current.value,
-            quantity: this.quantityRef.current.value
+            quantity: this.quantityRef.current.value,
         }
         this.props.addItem(item);
         e.currentTarget.reset();
