@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Inventory from './Inventory';
 import FindItem from './FindItem';
@@ -31,9 +31,9 @@ const search = (term) => {
   //takes in the names or descriptions of any item
   //filters through to see if any of them contain words in the search term
   //returns terms with only terms searched for
-  let results = itemList.filter(item => item.desc.includes(term))
+  let results = itemList.filter(item => item.name.includes(term) || item.desc.includes(term))
   setSearchResults(results);
-  console.log(term)
+  console.log(results)
 }
 
 

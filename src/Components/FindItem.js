@@ -5,7 +5,7 @@ import Searchbar from './Searchbar';
 function FindItem(props){
     return (
         <React.Fragment>
-            <Searchbar onSearch={props.onSearch} />
+            <Searchbar onSearch={props.onSearch} details={props.itemList} />
             <ul>
             {Object.keys(props.itemList).map(key => <Item key={key} index={key} details={props.itemList[key]} deleteItem={props.deleteItem} />)}
             </ul>

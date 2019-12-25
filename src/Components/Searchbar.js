@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Searchbar(props){
     const [term, setTerm] = useState('');
-
-    const search = () => {
-        const newTerm = {term}
-        props.onSearch(newTerm)
-        }
+    const [searchResults, setSearchResults] = useState([])
 
     const handleTermChange = (e) => {
         setTerm(e.currentTarget.value)
     }
+
+    const search = () => {
+        const newTerm = Object.values({term})
+        props.onSearch(newTerm)
+        }
 
     return (
         <React.Fragment>
