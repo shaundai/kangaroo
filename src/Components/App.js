@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Inventory from './Inventory';
 import FindItem from './FindItem';
+import base from '../base';
 
-function App() {
-  const [itemList, setItemList] = useState([{ name: "scissors", desc: "the scissors", box: 3, location: "here", owner: "sally", quantity: 4 },  {name: "brush", desc: "the brush", box: 3, location: "here", owner: "sally", quantity: 1 }])
+function App(props) {
+  const [itemList, setItemList] = useState([{ name: "scissors", desc: "the scissors", box: 3, location: "here", owner: "sally", quantity: 4 },  {name: "brush", desc: "the dopest brush", box: 3, location: "here", owner: "sally", quantity: 1 }])
   const [searchResults, setSearchResults] = useState([]);
 
   function addItem(item){
@@ -12,6 +13,10 @@ function App() {
     newItemList[`item${Date.now()}`] = item
     setItemList(newItemList);
 }
+
+useEffect(()=> {
+  this.ref = base.syncState(`${props.match.params.appId}`)
+})
 
 const updateItem = (key, updatedItem) => {
   //take copy of the current state
