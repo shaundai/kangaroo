@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Inventory from './Inventory';
 import FindItem from './FindItem';
@@ -33,14 +33,14 @@ const search = (term) => {
   //returns terms with only terms searched for
   let results = itemList.filter(item => item.name.includes(term) || item.desc.includes(term))
   setSearchResults(results);
-  console.log(results)
+  console.log(searchResults)
 }
 
 
   return (
     <div className="App">
         <Inventory addItem={addItem} itemList={itemList} updateItem={updateItem} deleteItem={deleteItem} />
-        <FindItem itemList={itemList} onSearch={search} deleteItem={deleteItem} />
+        <FindItem itemList={itemList} onSearch={search} deleteItem={deleteItem} searchResults={searchResults} />
     </div>
   );
 }

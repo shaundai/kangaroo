@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Searchbar(props){
     const [term, setTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([])
-
+    
     const handleTermChange = (e) => {
         setTerm(e.currentTarget.value)
     }
