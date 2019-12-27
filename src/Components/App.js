@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Inventory from './Inventory';
 import FindItem from './FindItem';
@@ -14,9 +14,6 @@ function App(props) {
     setItemList(newItemList);
 }
 
-useEffect(()=> {
-  this.ref = base.syncState(`${props.match.params.appId}`)
-})
 
 const updateItem = (key, updatedItem) => {
   //take copy of the current state
@@ -40,7 +37,6 @@ const search = (term) => {
   setSearchResults(results);
   console.log(searchResults)
 }
-
 
   return (
     <div className="App">
