@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
+
+//Components
 import Inventory from './Inventory';
 import FindItem from './FindItem';
+
 import base from '../base';
 
 function App(props) {
