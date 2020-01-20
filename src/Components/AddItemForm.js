@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddItemForm extends React.Component{
+function AddItemForm ({ nameRef, descRef, ownerRef, boxRef, locationRef, quantityRef, addItem}){
     nameRef = React.createRef();
     descRef = React.createRef();
     ownerRef = React.createRef();
@@ -8,32 +8,30 @@ class AddItemForm extends React.Component{
     locationRef = React.createRef();
     quantityRef = React.createRef();
 
-    createItem = (e) => {
+    const createItem = (e) => {
         e.preventDefault();
         const item = {
-            name: this.nameRef.current.value,
-            desc: this.descRef.current.value,
-            owner: this.ownerRef.current.value,
-            box: this.boxRef.current.value,
-            location: this.locationRef.current.value,
-            quantity: this.quantityRef.current.value,
+            name: nameRef.current.value,
+            desc: descRef.current.value,
+            owner: ownerRef.current.value,
+            box: boxRef.current.value,
+            location: locationRef.current.value,
+            quantity: quantityRef.current.value,
         }
-        this.props.addItem(item);
+        addItem(item);
         e.currentTarget.reset();
     }
-    render(){
     return (
-        <form onSubmit={this.createItem}>
-            <input name="name" ref={this.nameRef} type="text" placeholder="What is this?" required></input>
-            <input name="desc" ref={this.descRef} type="text" placeholder="Describe this item."></input>
-            <input name="owner" ref={this.ownerRef} type="text" placeholder="Who does this belong to? (ex. the cat, Sally)"></input>
-            <input name="box" ref={this.boxRef} type="text" placeholder="Which box?" required></input>
-            <input name="location" ref={this.locationRef} type="text" placeholder="Where is this box?"></input>
-            <input name="quantity" ref={this.quantityRef} type="text" placeholder="Quantity"></input>
+        <form onSubmit={createItem}>
+            <input name="name" ref={nameRef} type="text" placeholder="What is this?" required></input>
+            <input name="desc" ref={descRef} type="text" placeholder="Describe this item."></input>
+            <input name="owner" ref={ownerRef} type="text" placeholder="Who does this belong to? (ex. the cat, Sally)"></input>
+            <input name="box" ref={boxRef} type="text" placeholder="Which box?" required></input>
+            <input name="location" ref={locationRef} type="text" placeholder="Where is this box?"></input>
+            <input name="quantity" ref={quantityRef} type="text" placeholder="Quantity"></input>
             <button type="submit">Add Item</button>
         </form>
     )
-}
 }
 
 export default AddItemForm;

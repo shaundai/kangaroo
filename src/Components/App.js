@@ -5,20 +5,17 @@ import './App.css';
 import Inventory from './Inventory';
 import FindItem from './FindItem';
 
-import base from '../base';
-
 function App(props) {
   const [itemList, setItemList] = useState([{ name: "scissors", desc: "the scissors", box: 3, location: "here", owner: "sally", quantity: 4 },  {name: "brush", desc: "the dopest brush", box: 3, location: "here", owner: "sally", quantity: 1 }])
   const [searchResults, setSearchResults] = useState([]);
 
-  function addItem(item){
+  const addItem = (item) => {
     const newItemList = {...itemList};
     newItemList[`item${Date.now()}`] = item
     setItemList(newItemList);
-}
-
-
-const updateItem = (key, updatedItem) => {
+  }
+  
+  const updateItem = (key, updatedItem) => {
   //take copy of the current state
   const items = { ...itemList };
   //update the state to that of the updatedItem we took in
